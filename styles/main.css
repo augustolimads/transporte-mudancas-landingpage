@@ -1,0 +1,28 @@
+@import './root.css';
+@import './animations.css';
+
+@tailwind base;
+@tailwind components;
+
+.section {
+    @apply min-h-screen h-full p-4 flex flex-col items-center justify-center bg-cover bg-no-repeat bg-center;
+}
+
+:root{
+    --primary: #E21E1E;
+    --secondary: #00BFA5;
+    --dark: #14213D;
+    --white: #FBFBFB;
+
+}
+body{
+    font-family: 'Open-sans', 'Segoe-UI', sans-serif;
+}
+
+.link:hover{
+    border-bottom: 2px solid var(--primary);
+    transition: 0.2s ease-out;
+}
+
+@tailwind utilities;
+

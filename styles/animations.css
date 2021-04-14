@@ -1,0 +1,113 @@
+.animeLeft{
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: animeLeft .3s forwards;
+}
+
+@keyframes animeLeft {
+    to {
+        opacity: 1;
+        transform: initial;
+    }
+}
+
+.slide {
+    transition: transform 0.3s ease;
+}
+
+/*---------------------------------------*/
+
+.flip {
+    -webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: swing-in-top-fwd 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+@keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+/*---------------------*/
+
+.flip-card {
+    perspective: 1000px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.flip-card:hover .flip-card-inner {
+    -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    transition: transform 0.8s;    
+}
+
+.flip-card-inner {
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;    
+}
+
+.card-front, .card-back {
+    position: absolute;
+    z-index: 2;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(-180deg);
+}
+
+@-webkit-keyframes flip-vertical-left {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes flip-vertical-left {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+    }
+}
